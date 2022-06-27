@@ -45,3 +45,80 @@
     - false || anything = anything
     - true && anything = anything
     - false && anything = false
+
+9. 객체에 추가된 기능들
+    - 속성의 축약 표현
+      var obj = {
+        x: 1,
+        y: 2
+      }
+
+      //ES6
+      let x = 1, y = 2;
+      const obj = {
+        x, y
+      };
+    - 계산된 프로퍼티 이름
+      탬플릿 리터럴의 표현식 삽입 기능을 이용하여 동적으로 
+      속성값을 만들어 줄 수 있다.
+    - 메소드의 축약 표현
+
+10. ES6에서 새로 도입된 class
+    - ES5에서는 객체의 상속을 하려면 무조건 프로토타입의 상속을 이용했다.
+    - 객체지향 언어에 익숙한 개발자들이 프로토타입 기반 개발에 어려움을 느껴서
+      ES6에서 class가 도입됨
+    - class를 사용한다고 프로토타입 기반을 포기하는 것은 아니다.
+    - ES5의 객체 생성방식에 하나의 방식이 추가된 것이라고 생각하면 된다.
+    - 기존 객체 생성방식보다 편하게 상속을 구현할 수 있다.(extends, super 키워드 사용가능)
+    - class의 선언
+      class 객체명 {
+            //생성자 함수는 constructor로 만들어야 된다.
+            constructor(매개변수){
+                초기화과정;
+            }
+            프로토타입 메소드 {
+
+            }
+            정적 메소드 {
+
+            }
+            get getter 메소드() {
+
+            }
+            set setter 메소드(){
+
+            }
+      }
+    - ES6에서 class에는 필드를 지정할 수 없음, 메소드만 선언 가능
+
+11. class의 상속
+    - extends 키워드를 사용하여 상속받아 새로운 클래스를 정의한다.
+    - 생성함수를 상속받아서 동적으로 클래스를 만들수 있다.
+
+12. ES6의 화살표 함수
+    - ES6 이전의 메소드들은 모두 호출가능하면서 생성자 함수로 사용가능
+      그래서 모든 메소드들에 불필요하게 prototype 객체가 생성되는 경우가 발생한다.
+    - 호출가능하지만 생성자 함수로는 사용 불가능한 화살표 함수가 등장
+    - 화살표 메소드의 정의는 
+      function 키워드 대신 =>
+      //ES5
+      function add(a,b) {
+        return a + b;
+      }
+
+      //ES6
+      const add = (a,b) => {
+        return a + b;
+      }
+
+      const add = (a, b) => ( 
+        a + b
+      )
+
+      const print = a => {
+        console.log(a); 
+      }
+
+      const add = () => {
+        console.log(1 + 2);
+      }
